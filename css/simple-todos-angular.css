@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 html {
-  font-family: "Roboto";
+  font-family: "Andale Mono", monospace;
 }
 
 body {
@@ -42,9 +42,32 @@ header {
 h1 {
   font-size: 1.5em;
   margin: 0;
-  margin-bottom: 10px;
   display: inline-block;
   margin-right: 1em;
+}
+
+p {
+  margin-top: 0px;
+}
+
+.count-circle {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  background-color: #880e4f;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  float: right;
+}
+
+.count-text {
+  display: flex;
+  color: white;
+  height: 25px;
+  width: 50px;
+  align-items: center;
+  justify-content: center;
 }
 
 form {
@@ -55,10 +78,10 @@ form {
 
 .new-task input {
   box-sizing: border-box;
-  padding: 10px 0;
+  padding: 15px 0;
   background: transparent;
   border: none;
-  width: 100%;
+  width: 60%;
   padding-right: 80px;
   font-size: 1em;
 }
@@ -111,7 +134,7 @@ li.private {
 }
 
 header .hide-completed {
-  float: right;
+  float: none;
 }
 
 .toggle-private {
@@ -134,5 +157,21 @@ header .hide-completed {
 }
 
 label {
-  color: black;
+  color: #ad1457;
+}
+
+::-webkit-input-placeholder {
+   color: #ff80ab;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #ff80ab;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #ff80ab;
+}
+
+:-ms-input-placeholder {
+   color: #ff80ab;
 }
