@@ -1,6 +1,7 @@
 <head>
   <title>Simple Todos!</title>
   <link rel="icon" href="images/leia.png"/>
+  <link rel="stylesheet" type="text/css" href="css/simple-todos-angular.css">
 </head>
 
 <body>
@@ -10,12 +11,31 @@
      ng-app="simple-todos"
      ng-controller="TodosListCtrl">
 
-    <ul class="collection with-header">
-      <li class="collection-header"><h4>Simple Todos</h4></li>
-      <li class="collection-item" ng-repeat="task in tasks">{{task.text}}</li>
-    </ul>
+     <header>
+       <h1>Todo List ( {{ incompleteCount() }} )</h1>
 
-    <a class="waves-effect waves-light btn">Stuff</a>
+      <label class="hide-completed">
+        <input type="checkbox" ng-model="hideCompleted"/>
+        Hide Completed Tasks
+      </label>
+
+
+      <!-- add a form below the h1 -->
+      <form class="new-task"
+            ng-submit="addTask(newTask); newTask='';">
+        <input ng-model="newTask" type="text"
+               name="text" placeholder="Type to add new tasks" />
+      </form>
+
+    </header>
+
+    <ul class="collection">
+      <li class="collection-item" ng-repeat="task in tasks" ng-class="{'checked': task.checked}">
+        <button class="delete" ng-click="tasks.remove(task)">&times;</button>
+        <input type="checkbox" ng-model="task.checked" class="toggle-checked" />
+        <span class="text">{{task.text}}</span>
+      </li>
+    </ul>
 
    </div>
 
