@@ -2,6 +2,7 @@
   <title>Simple Todos!</title>
   <link rel="icon" href="images/leia.png"/>
   <link rel="stylesheet" type="text/css" href="css/simple-todos-angular.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -19,29 +20,22 @@
         Hide Completed Tasks
       </label>
 
-
       <!-- add a form below the h1 -->
       <form class="new-task"
             ng-submit="addTask(newTask); newTask='';">
         <input ng-model="newTask" type="text"
-               name="text" placeholder="Type to add new tasks" />
+               name="text"/>
       </form>
-
     </header>
 
     <ul class="collection">
-      <li class="collection-item" ng-repeat="task in tasks" ng-class="{'checked': task.checked}">
-        <button class="delete" ng-click="tasks.remove(task)">&times;</button>
-        <input type="checkbox" ng-model="task.checked" class="toggle-checked" />
-        <span class="text">{{task.text}}</span>
+      <li class="collection-item avatar" ng-repeat="task in tasks">
+        <input type="checkbox" ng-model="task.checked" class="toggle-checked" id="test5"/>
+        <label class="text" ng-class="{checked: task.checked}" for="test5">{{task.text}}</label>
+        <button class="material-icons delete" ng-click="tasks.remove(task)">delete</button>
       </li>
     </ul>
 
    </div>
 
 </body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
