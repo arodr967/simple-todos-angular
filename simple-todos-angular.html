@@ -13,25 +13,32 @@
      ng-controller="TodosListCtrl">
 
      <header>
-       <h1>Todo List ( {{ incompleteCount() }} )</h1>
+           <h1>Simple Todos</h1>
+           <div class="count-circle">
+             <div class="count-text">{{ incompleteCount() }}</div>
+           </div>
 
-      <label class="hide-completed">
-        <input type="checkbox" ng-model="hideCompleted"/>
-        Hide Completed Tasks
-      </label>
+        <div class="col s2">
+        <!-- add a form below the h1 -->
+          <form class="new-task"
+                ng-submit="addTask(newTask); newTask='';">
+            <input ng-model="newTask" type="text"
+                   name="text" placeholder="Insert a new task and press enter"/>
+          </form>
+       </div>
+       <div class="col s1">
+         <label class="hide-completed">
+           <input type="checkbox" ng-model="hideCompleted"/>
+           Hide Completed Tasks
+         </label>
+       </div>
 
-      <!-- add a form below the h1 -->
-      <form class="new-task"
-            ng-submit="addTask(newTask); newTask='';">
-        <input ng-model="newTask" type="text"
-               name="text"/>
-      </form>
     </header>
 
-    <ul class="collection">
-      <li class="collection-item avatar" ng-repeat="task in tasks">
-        <input type="checkbox" ng-model="task.checked" class="toggle-checked" id="test5"/>
-        <label class="text" ng-class="{checked: task.checked}" for="test5">{{task.text}}</label>
+    <ul>
+      <li ng-repeat="task in tasks">
+        <input type="checkbox" ng-model="task.checked" class="toggle-checked"/>
+        <span class="text" ng-class="{checked: task.checked}">{{task.text}}</span>
         <button class="material-icons delete" ng-click="tasks.remove(task)">delete</button>
       </li>
     </ul>
