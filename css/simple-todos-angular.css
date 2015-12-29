@@ -1,8 +1,11 @@
 /* CSS declarations go here */
+html {
+  font-family: "Roboto";
+}
+
 body {
-  font-family: sans-serif;
-  background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-color: #d81b60;
+  background-image: linear-gradient(to bottom, #d81b60, #f8bbd0 100%);
   background-attachment: fixed;
 
   position: absolute;
@@ -22,11 +25,12 @@ body {
   margin: 0 auto;
   min-height: 100%;
   background: white;
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  background: #f48fb1;
+  background-image: linear-gradient(to bottom, #f48fb1, #fce4ec 100%);
   padding: 20px 15px 15px 15px;
   position: relative;
 }
@@ -97,6 +101,10 @@ li.checked .text {
   text-decoration: line-through;
 }
 
+.checked {
+  text-decoration: line-through;
+}
+
 li.private {
   background: #eee;
   border-color: #ddd;
@@ -123,4 +131,8 @@ header .hide-completed {
   .new-task input {
     padding-bottom: 5px;
   }
+}
+
+label {
+  color: black;
 }
