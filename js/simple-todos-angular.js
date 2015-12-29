@@ -26,7 +26,12 @@ if (Meteor.isClient) {
       });
 
       $scope.incompleteCount = function () {
-        return Tasks.find({ checked: {$ne: true} }).count();
+        var count = Tasks.find({ checked: {$ne: true} }).count();
+          if(count > 0) {
+            return count;
+          } else {
+            return "DONE!";
+          }
       };
 
       //end of controller
