@@ -70,6 +70,11 @@ p {
   justify-content: center;
 }
 
+#login-buttons .login-button, .accounts-dialog .login-button {
+    background: #d81b60;
+    border: 1px solid #f8bbd0;
+}
+
 form {
   margin-top: 10px;
   margin-bottom: -10px;
